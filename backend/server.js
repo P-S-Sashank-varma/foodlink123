@@ -14,7 +14,16 @@ console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:3000' }));
+app.use(express.json());
+
+app.use(
+  cors({
+    origin: ['https://foodlink123-sigma.vercel.app', 'http://localhost:3000'], // Allow both local and deployed frontend
+    credentials: true, // Allow cookies/authentication
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow necessary HTTP methods
+  })
+);
+
 
 const connectDB = async () => {
   try {
