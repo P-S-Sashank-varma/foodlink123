@@ -12,15 +12,17 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
-// Middleware
-app.use(express.json());
-app.use(express.json());
 
+app.use(express.json());
 app.use(
   cors({
-    origin: ['https://foodlink123-sigma.vercel.app', 'http://localhost:3000'], // Allow both local and deployed frontend
-    credentials: true, // Allow cookies/authentication
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow necessary HTTP methods
+    origin: [
+      process.env.FRONTEND_URL || 'https://foodlink123-sigma.vercel.app', 
+      'http://localhost:3000'
+    ],
+    credentials: true, // Allows cookies/auth headers
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Explicitly allow necessary HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow required headers
   })
 );
 
