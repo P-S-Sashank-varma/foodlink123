@@ -172,7 +172,7 @@ const Login = ({ handleUserLogin }) => {
           transition={{ delay: 0.7, duration: 0.5 }}
         >
           Don't have an account?{' '}
-          <a href="#" className="font-medium text-black hover:text-gray-800 transition-colors">
+          <a href="/signup" className="font-medium text-black hover:text-gray-800 transition-colors">
             Sign up
           </a>
         </motion.p>
