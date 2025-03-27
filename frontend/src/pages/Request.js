@@ -90,7 +90,7 @@ const Request = () => {
         return;
       }
 
-      const response = await fetch('https://foodlink-1.onrender.com/api/claim', {
+      const response = await fetch('https://foodlink123.onrender.com/api/claim', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
