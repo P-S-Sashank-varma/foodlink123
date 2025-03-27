@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL || 'https://foodlink123-sigma.vercel.app', 
+      process.env.FRONTEND_URL || 'https://foodlink123-sigma.vercel.app', 'https://foodlink123-git-main-p-s-sashank-varmas-projects.vercel.app',
       'http://localhost:3000'
     ],
     credentials: true, // Allows cookies/auth headers
