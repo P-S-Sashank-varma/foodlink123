@@ -15,15 +15,13 @@ console.log('JWT_SECRET:', process.env.JWT_SECRET);
 app.use(express.json());
 app.use(
   cors({
-    origin: [
-      process.env.FRONTEND_URL || 'https://foodlink123-sigma.vercel.app', 
-      'https://foodlink123-git-main-p-s-sashank-varmas-projects.vercel.app',
-      'http://localhost:3000'
-    ],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: '*', // Allow all origins for testing, change it to specific domains later
+    credentials: true, 
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'], 
   })
+);
+
 );
 
 const connectDB = async () => {
