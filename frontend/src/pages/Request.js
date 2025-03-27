@@ -11,7 +11,7 @@ const Request = () => {
 
   const fetchDonations = useCallback(async () => {
     try {
-      const response = await fetch('https://foodlink-1.onrender.com/api/donations');
+      const response = await fetch('https://foodlink123.onrender.com/api/donations');
       const data = await response.json();
 
       console.log('Fetched donations data:', data);
