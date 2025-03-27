@@ -12,20 +12,19 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
-
 app.use(express.json());
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL || 'https://foodlink123-sigma.vercel.app', 'https://foodlink123-git-main-p-s-sashank-varmas-projects.vercel.app',
+      process.env.FRONTEND_URL || 'https://foodlink123-sigma.vercel.app', 
+      'https://foodlink123-git-main-p-s-sashank-varmas-projects.vercel.app',
       'http://localhost:3000'
     ],
-    credentials: true, // Allows cookies/auth headers
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Explicitly allow necessary HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allow required headers
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
-
 
 const connectDB = async () => {
   try {
